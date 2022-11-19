@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:get/get.dart';
 import 'package:queue/bindings.dart';
-import 'package:queue/screens/distribution_screen/view/distribution_screen.dart';
+import 'package:queue/distribution/view/distribution_screen.dart';
 
 // Project imports:
 import 'package:queue/theme/queue_colors.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:get/get.dart';
-import 'package:queue/screens/distribution_screen/controller/distribution_screen_controller.dart';
+import 'package:queue/distribution/controller/distribution_screen_controller.dart';
 
 // Project imports:
 
@@ -28,6 +28,9 @@ class DistributionScreen extends GetView<DistributionScreenController> {
               BottomNavigationBarItem(
                 label: "",
                 icon: Icon(Icons.calendar_month_outlined),
+              ),BottomNavigationBarItem(
+                label: "",
+                icon: Icon(Icons.settings),
               ),
             ],
           ),

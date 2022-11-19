@@ -44,24 +44,24 @@ class QueueTextStyle {
 
   static TextStyle title2(Color color) {
     return TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w400,
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
       color: color,
     );
   }
 
   static TextStyle title3(Color color) {
     return TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.w400,
+      fontSize: 30,
+      fontWeight: FontWeight.w700,
       color: color,
     );
   }
 
-  static TextStyle aniTitle(Color color, {double letterSpacing = 1}) {
+  static TextStyle title4(Color color, {double letterSpacing = 1}) {
     return TextStyle(
-      fontSize: 28,
-      fontWeight: FontWeight.w500,
+      fontSize: 48,
+      fontWeight: FontWeight.w700,
       color: color,
       letterSpacing: letterSpacing,
     );

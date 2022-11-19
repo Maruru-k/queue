@@ -27,7 +27,7 @@ class HomeScreen extends GetView<HomeScreenController> {
       appBar: AppBar(
         title: const Text("Queue"),
         leading: const Icon(Icons.menu, size: 36),
-        titleTextStyle: QueueTextStyle.aniTitle(QueueColor.white),
+        titleTextStyle: QueueTextStyle.title4(QueueColor.white),
       ),
       body: ListView(
         children: [

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:queue/screens/home/view/home_screen.dart';
 import 'package:queue/screens/map_screan/view/map_screen.dart';
+import 'package:queue/screens/onboarding_screen/view/onboarding_screen.dart';
+import 'package:queue/screens/settings_screen/view/settings_screen.dart';
 
 // Project imports:
 
@@ -26,9 +28,12 @@ class DistributionScreenController extends GetxController {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return  HomeScreen();
-      case 1:
-        return const MapScreen();
+        return const OnboardingScreen();
+      //   return  HomeScreen();
+      // case 1:
+      //   return const MapScreen();
+      // case 2:
+      //   return const SettingsScreen();
       default:
         throw ArgumentError();
     }

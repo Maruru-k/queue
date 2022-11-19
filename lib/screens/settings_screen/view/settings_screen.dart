@@ -4,14 +4,14 @@ import 'package:queue/screens/map_screan/controller/map_controller.dart';
 import 'package:queue/theme/queue_colors.dart';
 import 'package:queue/theme/queue_text_style.dart';
 
-class MapScreen extends GetView<MapScreenController> {
-  const MapScreen({Key? key}) : super(key: key);
+class SettingsScreen extends GetView<MapScreenController> {
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Anilibria"),
+        title: const Text("Queue"),
         leading: const Icon(Icons.menu, size: 36),
         titleTextStyle: QueueTextStyle.title4(QueueColor.white),
       ),
