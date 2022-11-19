@@ -1,5 +1,5 @@
 // Project imports:
-import 'package:anilib/models/submodel/title.dart';
+import 'package:queue/models/submodel/title.dart';
 
 class ScheduleTitle {
   int day;

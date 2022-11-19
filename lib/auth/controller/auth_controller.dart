@@ -1,5 +1,5 @@
-import 'package:anilib/repositories/auth.dart';
 import 'package:get/get.dart';
+import 'package:queue/repositories/auth.dart';
 
 class AuthController extends GetxController {
   final AuthRepository _authRepository;

@@ -6,10 +6,11 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 // Project imports:
-import 'package:anilib/canstants.dart';
+
+import '../canstants.dart';
 
 class AuthRepository {
-  final String _url = baseUrl + "/public/login.php";
+  final String _url = "$baseUrl/public/login.php";
 
   AuthRepository();
 

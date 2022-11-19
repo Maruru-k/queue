@@ -6,11 +6,11 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 // Project imports:
-import 'package:anilib/canstants.dart';
-import 'package:anilib/models/submodel/title.dart';
+import 'package:queue/canstants.dart';
+import 'package:queue/models/submodel/title.dart';
 
 class RandomTitleRepository {
-  final String _url = baseApiUrl + "/v2/getRandomTitle";
+  final String _url = "$baseApiUrl/v2/getRandomTitle";
 
   RandomTitleRepository();
 

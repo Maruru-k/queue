@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             secondary: QueueColor.black,
           ),
         ),
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         scrollBehavior: MyCustomScrollBehavior(),
         getPages: [
           GetPage(
