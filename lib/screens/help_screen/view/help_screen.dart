@@ -13,10 +13,10 @@ class HelpScreen extends GetView<HelpScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: QueueColor.background,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 36),
-        child: Stack(children: [
-          Column(
+      body: Stack(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 36),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,19 +58,21 @@ class HelpScreen extends GetView<HelpScreenController> {
               const SizedBox(height: 94),
             ],
           ),
-          Positioned(
-            bottom: 92,
-            child: QueueOutlinedButton(
-              onPressed: () {Get.snackbar("Отправлено!","Успешно!");},
-              color: QueueColor.primary,
-              child: Text(
-                "Отправить",
-                style: QueueTextStyle.title2(QueueColor.white),
-              ),
+        ),
+        Positioned(
+          bottom: 92,
+          left: 36,
+          right: 36,
+          child: QueueOutlinedButton(
+            onPressed: () => Get.snackbar("Отправлено!","Успешно!"),
+            color: QueueColor.primary,
+            child: Text(
+              "Отправить",
+              style: QueueTextStyle.title2(QueueColor.white),
             ),
           ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }

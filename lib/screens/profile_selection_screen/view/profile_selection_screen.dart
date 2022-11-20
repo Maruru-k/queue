@@ -53,7 +53,8 @@ class ProfileSelectionScreen extends GetView<ProfileSelectionScreenController> {
                     ),
                     const SizedBox(height: 36),
                     QueueOutlinedButton(
-                      onPressed: () => Get.off(() => const RegistrationScreen()),
+                      onPressed: () =>
+                          Get.off(() => const RegistrationScreen()),
                       color: QueueColor.primary,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +71,9 @@ class ProfileSelectionScreen extends GetView<ProfileSelectionScreenController> {
                     ),
                     const SizedBox(height: 30),
                     QueueOutlinedButton(
-                      onPressed: (){},
+                      onPressed: () => Get.off(() => const RegistrationScreen(
+                            servisRegForm: true,
+                          )),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

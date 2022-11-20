@@ -11,7 +11,9 @@ import 'package:queue/widgets/queue_outlined_button.dart';
 import 'package:queue/widgets/queue_text_field.dart';
 
 class RegistrationScreen extends GetView<RegistrationController> {
-  const RegistrationScreen({Key? key}) : super(key: key);
+  final bool servisRegForm;
+
+  const RegistrationScreen({super.key, this.servisRegForm = false});
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,23 @@ class RegistrationScreen extends GetView<RegistrationController> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    servisRegForm
+                        ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Введите название организации:",
+                                style: QueueTextStyle.mediumBold(
+                                    QueueColor.darkGray),
+                              ),
+                              const SizedBox(height: 10),
+                              QueueTextField(
+                                  textEditingController:
+                                      controller.emailEditingController),
+                              const SizedBox(height: 16),
+                            ],
+                          )
+                        : Container(),
                     Text(
                       "Введите e-mail:",
                       style: QueueTextStyle.mediumBold(QueueColor.darkGray),
@@ -51,7 +70,7 @@ class RegistrationScreen extends GetView<RegistrationController> {
                     QueueTextField(
                         textEditingController:
                             controller.emailEditingController),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 16),
                     Text(
                       "Введите пароль:",
                       style: QueueTextStyle.mediumBold(QueueColor.darkGray),
@@ -60,7 +79,7 @@ class RegistrationScreen extends GetView<RegistrationController> {
                     QueueTextField(
                         textEditingController:
                             controller.firstPasswordEditingController),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 16),
                     Text(
                       "Введите пароль еще раз:",
                       style: QueueTextStyle.mediumBold(QueueColor.darkGray),

@@ -22,6 +22,7 @@ class QueueOutlinedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: _height,
+      width: MediaQuery.of(context).size.width,
       child: OutlinedButton(
         onPressed: _onPressed,
         style: ButtonStyle(
