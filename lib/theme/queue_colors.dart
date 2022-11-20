@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class QueueColor {
-  static const Color primary = Color(0xFF881919);
+  static const Color primary = Color(0xFF25B66F);
+  static const Color darkGray = Color(0xFF14643D);
   static const Color black = Color(0xFF17202A);
   static const Color white = Color(0xFFFFFFFF);
   static const Color blue = Color(0xFF176093);

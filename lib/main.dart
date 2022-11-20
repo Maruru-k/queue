@@ -5,7 +5,10 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:get/get.dart';
 import 'package:queue/bindings.dart';
+import 'package:queue/canstants.dart';
 import 'package:queue/distribution/view/distribution_screen.dart';
+import 'package:queue/screens/auth_screen/view/auth_screen.dart';
+import 'package:queue/screens/onboarding_screen/view/onboarding_screen.dart';
 
 // Project imports:
 import 'package:queue/theme/queue_colors.dart';
@@ -28,8 +31,9 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         title: 'Queue',
         theme: ThemeData(
+          fontFamily: queueFontFamily,
           colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: QueueColor.primary,
+            primary: QueueColor.darkGray,
             secondary: QueueColor.black,
           ),
         ),
@@ -37,11 +41,11 @@ class MyApp extends StatelessWidget {
         scrollBehavior: MyCustomScrollBehavior(),
         getPages: [
           GetPage(
-            name: "/distribution",
-            page: () => const DistributionScreen(),
+            name: "/onboard",
+            page: () => const OnboardingScreen(),
           ),
         ],
-        initialRoute: "/distribution",
+        initialRoute: "/onboard",
         initialBinding: DefaultBindings(),
       ),
     );

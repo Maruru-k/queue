@@ -1,11 +1,13 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:queue/canstants.dart';
 
 class QueueTextStyle {
   static TextStyle tiny(Color color) {
     return TextStyle(
       fontSize: 11,
       fontWeight: FontWeight.w300,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -14,6 +16,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -22,6 +25,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -30,6 +34,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w700,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -38,6 +43,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w400,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -46,6 +52,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w700,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -54,6 +61,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 30,
       fontWeight: FontWeight.w700,
+      fontFamily: queueFontFamily,
       color: color,
     );
   }
@@ -62,6 +70,7 @@ class QueueTextStyle {
     return TextStyle(
       fontSize: 48,
       fontWeight: FontWeight.w700,
+      fontFamily: queueFontFamily,
       color: color,
       letterSpacing: letterSpacing,
     );
