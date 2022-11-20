@@ -8,6 +8,7 @@ import 'package:queue/bindings.dart';
 import 'package:queue/canstants.dart';
 import 'package:queue/distribution/view/distribution_screen.dart';
 import 'package:queue/screens/auth_screen/view/auth_screen.dart';
+import 'package:queue/screens/home/view/home_screen.dart';
 import 'package:queue/screens/onboarding_screen/view/onboarding_screen.dart';
 
 // Project imports:
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         getPages: [
           GetPage(
             name: "/onboard",
-            page: () => const OnboardingScreen(),
+            page: () => HomeScreen(),
           ),
         ],
         initialRoute: "/onboard",

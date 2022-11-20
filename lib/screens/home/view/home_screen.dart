@@ -14,20 +14,74 @@ import 'package:queue/theme/queue_text_style.dart';
 
 enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
-const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
-
 class HomeScreen extends GetView<HomeScreenController> {
-  String dropdownValue = list.first;
-
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Queue"),
-        leading: const Icon(Icons.menu, size: 36),
-        titleTextStyle: QueueTextStyle.title4(QueueColor.white),
+        backgroundColor: QueueColor.white,
+        elevation: 0,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                icon: const Icon(
+                  Icons.menu_outlined,
+                  color: QueueColor.darkGray,
+                ));
+          }
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: QueueColor.backgroundColor,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 210,
+              child: DrawerHeader(
+                decoration: const BoxDecoration(
+                  color: QueueColor.darkGray,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Drawer Header',
+                      style: QueueTextStyle.title(QueueColor.white),
+                    ),
+                    Text(
+                      'Drawer Header',
+                      style: QueueTextStyle.medium(QueueColor.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text(
+                'Messages',
+                style: QueueTextStyle.title(QueueColor.purple),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text(
+                'Profile',
+                style: QueueTextStyle.title(QueueColor.purple),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text(
+                'Settings',
+                style: QueueTextStyle.title(QueueColor.purple),
+              ),
+            ),
+          ],
+        ),
       ),
       body: ListView(
         children: [

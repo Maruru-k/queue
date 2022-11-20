@@ -42,7 +42,7 @@ class QueueTextStyle {
   static TextStyle title(Color color) {
     return TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
       fontFamily: queueFontFamily,
       color: color,
     );
