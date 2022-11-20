@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 // import 'package:anilib/screens/detailed_anime/controller/anime_screen_controller.dart';
 // import 'package:anilib/screens/detailed_anime/view/anime_screen.dart';
 import 'package:queue/auth/controller/auth_controller.dart';
+import 'package:queue/screens/help_screen/controller/help_screen_controller.dart';
+import 'package:queue/screens/help_screen/view/help_screen.dart';
 import 'package:queue/screens/home/controller/home_controller.dart';
 import 'package:queue/theme/queue_colors.dart';
 import 'package:queue/theme/queue_text_style.dart';
@@ -15,7 +17,9 @@ import 'package:queue/theme/queue_text_style.dart';
 enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
 class HomeScreen extends GetView<HomeScreenController> {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key) {
+    Get.lazyPut(() => HelpScreenController());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +27,14 @@ class HomeScreen extends GetView<HomeScreenController> {
       appBar: AppBar(
         backgroundColor: QueueColor.white,
         elevation: 0,
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-                onPressed: () => Scaffold.of(context).openDrawer(),
-                icon: const Icon(
-                  Icons.menu_outlined,
-                  color: QueueColor.darkGray,
-                ));
-          }
-        ),
+        leading: Builder(builder: (context) {
+          return IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: const Icon(
+                Icons.menu_outlined,
+                color: QueueColor.darkGray,
+              ));
+        }),
       ),
       drawer: Drawer(
         backgroundColor: QueueColor.backgroundColor,
@@ -45,39 +47,37 @@ class HomeScreen extends GetView<HomeScreenController> {
                 decoration: const BoxDecoration(
                   color: QueueColor.darkGray,
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      'Drawer Header',
-                      style: QueueTextStyle.title(QueueColor.white),
-                    ),
-                    Text(
-                      'Drawer Header',
-                      style: QueueTextStyle.medium(QueueColor.white),
-                    ),
-                  ],
+                child: GetBuilder<HomeScreenController>(builder: (controller) {
+                  return Column(
+                    children: [
+                      Text(
+                        'Drawer Header',
+                        style: QueueTextStyle.title(QueueColor.white),
+                      ),
+                      Text(
+                        'Drawer Header',
+                        style: QueueTextStyle.medium(QueueColor.white),
+                      ),
+                    ],
+                  );
+                }),
+              ),
+            ),
+            ...List.generate(
+              controller.drawerItem.length,
+              (index) => ListTile(
+                onTap: () {
+                  controller.selectedIndex = index;
+                  controller.update();
+                  Get.off(() => const HelpScreen());
+                },
+                leading: controller.drawerItem[index].icon,
+                title: Text(
+                  controller.drawerItem[index].label,
+                  style: QueueTextStyle.title(controller.selectedIndex == index
+                      ? QueueColor.primary
+                      : QueueColor.purple),
                 ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text(
-                'Messages',
-                style: QueueTextStyle.title(QueueColor.purple),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text(
-                'Profile',
-                style: QueueTextStyle.title(QueueColor.purple),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                'Settings',
-                style: QueueTextStyle.title(QueueColor.purple),
               ),
             ),
           ],

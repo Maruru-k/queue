@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:queue/canstants.dart';
+import 'package:queue/distribution/view/distribution_screen.dart';
 import 'package:queue/screens/auth_screen/controller/auth_controller.dart';
 import 'package:queue/screens/home/view/home_screen.dart';
+import 'package:queue/screens/profile_selection_screen/view/profile_selection_screen.dart';
 import 'package:queue/screens/registration_screen/view/registration_screen.dart';
 import 'package:queue/theme/queue_colors.dart';
 import 'package:queue/theme/queue_text_style.dart';
@@ -74,7 +76,7 @@ class AuthScreen extends GetView<AuthScreenController> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: QueueOutlinedButton(
-                  onPressed: () => Get.off(() => HomeScreen()),
+                  onPressed: () => Get.off(() => DistributionScreen()),
                   color: QueueColor.primary,
                   child: Text(
                     "Вход",
@@ -84,7 +86,7 @@ class AuthScreen extends GetView<AuthScreenController> {
               ),
               const SizedBox(height: 32),
               TextButton(
-                  onPressed: () => Get.to(() => const RegistrationScreen()),
+                  onPressed: () => Get.to(() => const ProfileSelectionScreen()),
                   child: Text(
                     "Регистрация",
                     style: QueueTextStyle.mediumBold(QueueColor.darkGray),

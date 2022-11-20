@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:queue/screens/home/view/home_screen.dart';
 import 'package:queue/screens/profile_selection_screen/controller/profile_selection_controller.dart';
+import 'package:queue/screens/registration_screen/view/registration_screen.dart';
 import 'package:queue/theme/queue_colors.dart';
 import 'package:queue/theme/queue_text_style.dart';
 import 'package:queue/widgets/queue_outlined_button.dart';
@@ -52,7 +53,7 @@ class ProfileSelectionScreen extends GetView<ProfileSelectionScreenController> {
                     ),
                     const SizedBox(height: 36),
                     QueueOutlinedButton(
-                      onPressed: () => Get.off(() => HomeScreen()),
+                      onPressed: () => Get.off(() => const RegistrationScreen()),
                       color: QueueColor.primary,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +70,7 @@ class ProfileSelectionScreen extends GetView<ProfileSelectionScreenController> {
                     ),
                     const SizedBox(height: 30),
                     QueueOutlinedButton(
-                      onPressed: () => Get.off(() => HomeScreen()),
+                      onPressed: (){},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 import 'package:queue/distribution/controller/distribution_screen_controller.dart';
 import 'package:queue/screens/auth_screen/controller/auth_controller.dart';
+import 'package:queue/screens/help_screen/controller/help_screen_controller.dart';
 import 'package:queue/screens/home/controller/home_controller.dart';
 import 'package:queue/screens/map_screan/controller/map_controller.dart';
 import 'package:queue/screens/onboarding_screen/controller/onboarding_controller.dart';
@@ -17,7 +18,8 @@ class DefaultBindings extends Bindings {
   void dependencies() {
     Get.put(AuthScreenController());
     Get.put(RegistrationController());
-    // Get.put(DistributionScreenController());
+    Get.put(DistributionScreenController());
+    Get.put(HelpScreenController());
     Get.put(HomeScreenController());
     Get.put(MapScreenController());
     Get.put(SettingsScreenController());

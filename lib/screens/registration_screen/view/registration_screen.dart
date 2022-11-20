@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:queue/distribution/view/distribution_screen.dart';
+import 'package:queue/screens/home/view/home_screen.dart';
 import 'package:queue/screens/profile_selection_screen/view/profile_selection_screen.dart';
 import 'package:queue/screens/registration_screen/controller/registration_controller.dart';
 import 'package:queue/theme/queue_colors.dart';
@@ -71,7 +73,7 @@ class RegistrationScreen extends GetView<RegistrationController> {
                 ),
                 const SizedBox(height: 70),
                 QueueOutlinedButton(
-                  onPressed: () =>Get.to(()=>const ProfileSelectionScreen()),
+                  onPressed: () => Get.off(() => DistributionScreen()),
                   color: QueueColor.primary,
                   child: Text(
                     "Зарегестрироваться",

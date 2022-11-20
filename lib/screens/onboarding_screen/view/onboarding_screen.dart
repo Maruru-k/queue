@@ -67,7 +67,7 @@ class OnboardingScreen extends GetView<OnboardingScreenController> {
                                 children: [
                                   const Spacer(),
                                   Text(
-                                    "Поехалиж!",
+                                    "Поехали!",
                                     style:
                                         QueueTextStyle.title2(QueueColor.darkGray),
                                   ),

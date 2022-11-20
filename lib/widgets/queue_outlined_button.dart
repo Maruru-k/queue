@@ -22,7 +22,6 @@ class QueueOutlinedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: _height,
-      width: double.infinity,
       child: OutlinedButton(
         onPressed: _onPressed,
         style: ButtonStyle(

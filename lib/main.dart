@@ -38,12 +38,12 @@ class MyApp extends StatelessWidget {
             secondary: QueueColor.black,
           ),
         ),
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         scrollBehavior: MyCustomScrollBehavior(),
         getPages: [
           GetPage(
             name: "/onboard",
-            page: () => HomeScreen(),
+            page: () => OnboardingScreen(),
           ),
         ],
         initialRoute: "/onboard",

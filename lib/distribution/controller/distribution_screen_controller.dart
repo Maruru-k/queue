@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:get/get.dart';
 import 'package:queue/screens/auth_screen/view/auth_screen.dart';
+import 'package:queue/screens/help_screen/view/help_screen.dart';
 import 'package:queue/screens/home/view/home_screen.dart';
 import 'package:queue/screens/map_screan/view/map_screen.dart';
 import 'package:queue/screens/onboarding_screen/view/onboarding_screen.dart';
@@ -15,6 +16,18 @@ import 'package:queue/screens/settings_screen/view/settings_screen.dart';
 class DistributionScreenController extends GetxController {
   RxInt selectedIndex = 0.obs;
   late Widget screen;
+
+  List<DrawerItem> drawerItem = [
+    DrawerItem(
+        icon: const Icon(Icons.car_crash_outlined), label: 'Нужна помошь!'),
+    DrawerItem(
+        icon: const Icon(Icons.remove_from_queue_outlined), label: 'Заявка'),
+    DrawerItem(icon: const Icon(Icons.map_outlined), label: 'Карта'),
+    DrawerItem(icon: const Icon(Icons.keyboard_hide_sharp), label: 'История'),
+    DrawerItem(
+        icon: const Icon(Icons.support_agent_rounded), label: 'Поддержка'),
+    DrawerItem(icon: const Icon(Icons.settings), label: 'Настройки'),
+  ];
 
   @override
   void onInit() {
@@ -30,14 +43,20 @@ class DistributionScreenController extends GetxController {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return const AuthScreen();
-      //   return  HomeScreen();
-      // case 1:
-      //   return const MapScreen();
-      // case 2:
-      //   return const SettingsScreen();
+        return const HelpScreen();
+      case 1:
+        return const HelpScreen();
+      case 2:
+        return const SettingsScreen();
       default:
         throw ArgumentError();
     }
   }
+}
+
+class DrawerItem {
+  Icon icon;
+  String label;
+
+  DrawerItem({required this.icon, required this.label});
 }
