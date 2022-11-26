@@ -47,7 +47,7 @@ class DistributionScreenController extends GetxController {
       case 1:
         return const HelpScreen();
       case 2:
-        return const SettingsScreen();
+        return const HomeScreen();
       default:
         throw ArgumentError();
     }
